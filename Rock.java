@@ -1,6 +1,6 @@
-package mypackage;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.Console;
 public class Rock {
 	public static void main(String[] args) {
 		//for random
@@ -12,6 +12,7 @@ public class Rock {
 		String personPlay, secondPlayer, computerPlay;
 		int computerInt;
 		
+		Console console = System.console();
 		Scanner scan = new Scanner(System.in);
 		//asking 
 		System.out.println("1. Single Player");
@@ -22,8 +23,8 @@ public class Rock {
 		{
 		case 1: //for single player
 			System.out.println("Running single player\n");
-			System.out.print("Choose ('R' for Rock, 'S' for Scissor, or 'P' for Paper): ");
-			personPlay = scan.next().toUpperCase(); //converts the lower input to uppercase
+			char[] entering = console.readPassword("Choose ('R' for Rock, 'S' for Scissor, or 'P' for Paper): ");
+			personPlay = new String(entering).toUpperCase();
 			computerPlay = randomChoices; //assigning the values to computerPlay
 			//if-else condition
 			if(computerPlay.equals(personPlay)) {
@@ -54,11 +55,11 @@ public class Rock {
 		case 2: //for multi player
 			System.out.println("Running multiplayer\n");
 			System.out.println("For 1st player");
-			System.out.print("Choose ('R' for Rock, 'S' for Scissor, or 'P' for Paper): ");
-			personPlay = scan.next().toUpperCase();
+			char[] enteringFristUser = console.readPassword("Choose ('R' for Rock, 'S' for Scissor, or 'P' for Paper): ");
+			personPlay = new String(enteringFristUser).toUpperCase();
 			System.out.println("For 2nd player");
-			System.out.print("Choose ('R' for Rock, 'S' for Scissor, or 'P' for Paper): ");
-			secondPlayer = scan.next().toUpperCase();//changing to uppercase.
+			char[] enteringSecondUser = console.readPassword("Choose ('R' for Rock, 'S' for Scissor, or 'P' for Paper): ");
+			secondPlayer = new String(enteringSecondUser).toUpperCase();
 			//if-else condition
 			if (secondPlayer.equals(personPlay)) {
 			    System.out.println("It's a tie!");
