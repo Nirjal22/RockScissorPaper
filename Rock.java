@@ -18,6 +18,7 @@ public class Rock {
 		// asking
 		System.out.println("1. Single Player");
 		System.out.println("2. Multiplayer");
+		System.out.println("3. Exit");
 		// taking input
 		computerInt = scan.nextInt();
 		switch (computerInt) // switch statement
@@ -87,7 +88,8 @@ public class Rock {
 				} else {// throws an invalid input if user tries to enter other values.
 					System.out.println("Invalid input. Please choose R, P, or S.");
 				}
-
+			case 3:
+				break;
 			default:
 				break;
 		}
