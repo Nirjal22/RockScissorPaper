@@ -10,7 +10,8 @@ public class Rock {
 		String[] choices = { "R", "S", "P" };
 		String randomChoices = choices[randomNumber];
 		// variables
-		String secondPlayer="", personPlay ="", personPlay1 = ""; // initalizing the variables outside of the while loop.
+		String secondPlayer = "", personPlay = "", personPlay1 = ""; // initalizing the variables outside of the while
+																		// loop.
 		int computerInt;
 		boolean inValidInput = false;
 		boolean invalidInput1 = false;
@@ -54,7 +55,7 @@ public class Rock {
 								// if the values are matched then it throws true and break the statement.
 								break;
 							}
-						}
+						}System.out.println("Invalid Input!");
 					} catch (Exception e) {
 						System.out.println("Enter the correct values: ");
 						continue;
@@ -91,31 +92,35 @@ public class Rock {
 			case 2: // for multi player
 				System.out.println("Running multiplayer\n");
 				System.out.println("For 1st player");
-				while(!invalidInput1){
-					try{
-					char[] enteringFristUser = console.readPassword("Choose ('R' for Rock, 'S' for Scissor, or 'P' for Paper): ");
-					personPlay = new String(enteringFristUser).toUpperCase();
-					for(int k =0;k<choices.length;k++){
-						if (personPlay.equals(choices[k])) {
-							invalidInput1 = true;
-							break;
-						}
-					}}catch(Exception e){
+				while (!invalidInput1) {
+					try {
+						char[] enteringFristUser = console
+								.readPassword("Choose ('R' for Rock, 'S' for Scissor, or 'P' for Paper): ");
+						personPlay = new String(enteringFristUser).toUpperCase();
+						for (int k = 0; k < choices.length; k++) {
+							if (personPlay.equals(choices[k])) {
+								invalidInput1 = true;
+								break;
+							}
+						}System.out.println("Invalid Input!");
+					} catch (Exception e) {
 						System.out.println("Enter the correct values: ");
 						continue;
 					}
 				}
 				System.out.println("For 2nd player");
 				while (!inValidInput) {
-					try{
-					char[] enteringSecondUser = console.readPassword("Choose ('R' for Rock, 'S' for Scissor, or 'P' for Paper): ");
-					secondPlayer = new String(enteringSecondUser).toUpperCase();
-					for(int l=0;l<choices.length;l++){
-						if (secondPlayer.equals(choices[l])) {
-							inValidInput = true;
-							break;
-						}
-					}}catch(Exception e){
+					try {
+						char[] enteringSecondUser = console
+								.readPassword("Choose ('R' for Rock, 'S' for Scissor, or 'P' for Paper): ");
+						secondPlayer = new String(enteringSecondUser).toUpperCase();
+						for (int l = 0; l < choices.length; l++) {
+							if (secondPlayer.equals(choices[l])) {
+								inValidInput = true;
+								break;
+							}
+						}System.out.println("Invalid Input");
+					} catch (Exception e) {
 						System.out.println("Enter the correct values: ");
 						continue;
 					}
