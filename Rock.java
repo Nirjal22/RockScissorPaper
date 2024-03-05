@@ -55,7 +55,9 @@ public class Rock {
 								// if the values are matched then it throws true and break the statement.
 								break;
 							}
-						}System.out.println("Invalid Input!");
+						}if (!inValidInput) {
+							System.out.println("Invalid Input");
+						}
 					} catch (Exception e) {
 						System.out.println("Enter the correct values: ");
 						continue;
@@ -102,7 +104,9 @@ public class Rock {
 								invalidInput1 = true;
 								break;
 							}
-						}System.out.println("Invalid Input!");
+						}if (!invalidInput1) {
+							System.out.println("Invalid Input!");
+						}
 					} catch (Exception e) {
 						System.out.println("Enter the correct values: ");
 						continue;
@@ -119,7 +123,9 @@ public class Rock {
 								inValidInput = true;
 								break;
 							}
-						}System.out.println("Invalid Input");
+						}if (!inValidInput) {
+							System.out.println("Invalid Input!");
+						}
 					} catch (Exception e) {
 						System.out.println("Enter the correct values: ");
 						continue;
